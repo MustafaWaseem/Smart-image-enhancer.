@@ -1,0 +1,28 @@
+[project]
+name = "smart-image-enhancer"
+version = "1.0.0"
+description = "Sharpen, grayscale and compare images - Flet + OpenCV"
+requires-python = ">=3.10"
+dependencies = [
+  "flet==0.28.3",
+  "opencv-python",
+  "numpy",
+]
+
+[tool.flet]
+org = "com.smartenhancer"
+product = "Smart Image Enhancer"
+company = "Smart Enhancer"
+copyright = "Copyright (C) 2026"
+
+[tool.flet.app]
+path = "src"
+
+# Allow saving the result into Pictures / Download
+[tool.flet.android.permission]
+"android.permission.WRITE_EXTERNAL_STORAGE" = true
+"android.permission.READ_EXTERNAL_STORAGE" = true
+
+# Builds one smaller APK per CPU type instead of one 130 MB fat APK
+[tool.flet.android]
+split_per_abi = true
